@@ -8,4 +8,3 @@ export const mapOrder = (originalArray, orderArray, key) => {
 
   // return orderedArray
 }
-
