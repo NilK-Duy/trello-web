@@ -14,7 +14,7 @@ function ListColumns({ columns, createNewColumn, createNewCard }) {
 
   const [newColumnTitle, setNewColumnTitle] = useState('')
 
-  const addNewColumn = async () => {
+  const addNewColumn = () => {
     if (!newColumnTitle) {
       toast.error('Please enter Column Title!')
       return
@@ -28,7 +28,7 @@ function ListColumns({ columns, createNewColumn, createNewCard }) {
     // Gọi lên props function createNewColumn nằm ở component cha cao nhất (boards/_id.jsx)
     // Có thể đưa dữ liệu Board ra ngoài Redux Global Store
     // Sử dụng Redux để code clean hơn có theer gọi luôn API thay vì lần lượt gọi ngược lên
-    await createNewColumn(newColumnData)
+    createNewColumn(newColumnData)
 
     // Đóng trạng thái thêm Column mới & Clear Input
     toggleOpenNewColumnForm()
