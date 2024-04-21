@@ -21,23 +21,23 @@ const theme = extendTheme({
     dark: {}
   },
   components: {
-    // MuiCssBaseline: {
-    //   styleOverrides: {
-    //     body: {
-    //       '*::-webkit-scrollbar': {
-    //         width: '8px',
-    //         height: '8px'
-    //       },
-    //       '*::-webkit-scrollbar-thumb': {
-    //         backgourndColor: '#dcdde1',
-    //         borderRadius: '8px'
-    //       },
-    //       '*::-webkit-scrollbar-thumb:hover': {
-    //         backgourndColor: 'white'
-    //       }
-    //     }
-    //   }
-    // },
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          '*::-webkit-scrollbar': {
+            width: '8px',
+            height: '8px'
+          },
+          '*::-webkit-scrollbar-thumb': {
+            backgourndColor: '#dcdde1',
+            borderRadius: '8px'
+          },
+          '*::-webkit-scrollbar-thumb:hover': {
+            backgourndColor: 'white'
+          }
+        }
+      }
+    },
     MuiButton: {
       styleOverrides: {
         root: {
@@ -54,13 +54,13 @@ const theme = extendTheme({
         }
       }
     },
-    MuiTypography: {
-      styleOverrides: {
-        root: {
-          '&.MuiTypography-body1': { fontSize: '0.875rem' }
-        }
-      }
-    },
+    // MuiTypography: {
+    //   styleOverrides: {
+    //     root: {
+    //       '&.MuiTypography-body1': { fontSize: '0.875rem' }
+    //     }
+    //   }
+    // },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {

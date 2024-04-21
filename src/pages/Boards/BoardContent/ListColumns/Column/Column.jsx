@@ -26,7 +26,7 @@ import CloseIcon from '@mui/icons-material/Close'
 import { useConfirm } from 'material-ui-confirm'
 
 
-function Column({ column, createNewCard, deleteColumnDetails }) {
+function Column({ column, createNewCard, deleteColumnDetails, fetchCardDetailsAPI }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: column._id,
     data: { ...column }
@@ -122,7 +122,7 @@ function Column({ column, createNewCard, deleteColumnDetails }) {
           alignItems: 'center',
           justifyContent: 'space-between'
         }}>
-          <Typography variant="h6" sx={{
+          <Typography data-no-dnd="true" variant="h6" sx={{
             fontSize: '1rem',
             fontWeight: 'bold',
             cursor: 'pointer'
@@ -130,7 +130,7 @@ function Column({ column, createNewCard, deleteColumnDetails }) {
             {column?.title}
           </Typography>
           <Box>
-            <Tooltip title="More options">
+            <Tooltip data-no-dnd="true" title="More options">
               <ExpandMoreIcon
                 sx={{ color: 'text.primary', cursor: 'pointer' }}
                 id="basic-column-dropdown"
@@ -141,6 +141,7 @@ function Column({ column, createNewCard, deleteColumnDetails }) {
               />
             </Tooltip>
             <Menu
+              data-no-dnd="true"
               id="basic-menu-column-dropdown"
               anchorEl={anchorEl}
               open={open}
@@ -198,7 +199,10 @@ function Column({ column, createNewCard, deleteColumnDetails }) {
         </Box>
 
         {/* List Cards */}
-        <ListCards cards={orderedCards} />
+        <ListCards
+          cards={orderedCards}
+          fetchCardDetailsAPI={fetchCardDetailsAPI}
+        />
 
         {/* Box Column Footer */}
         <Box sx={{
@@ -212,7 +216,11 @@ function Column({ column, createNewCard, deleteColumnDetails }) {
               alignItems: 'center',
               justifyContent: 'space-between'
             }}>
-              <Button startIcon={<AddCardIcon />} onClick={toggleOpenNewCardForm}>Add new card</Button>
+              <Button
+                data-no-dnd="true"
+                startIcon={<AddCardIcon />}
+                onClick={toggleOpenNewCardForm}
+              >Add new card</Button>
               <Tooltip title="Drag to move">
                 <DragHandleIcon sx={{ cursor: 'pointer' }} />
               </Tooltip>
