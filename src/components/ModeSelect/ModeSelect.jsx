@@ -47,14 +47,14 @@ function ModeSelect() {
             <LightModeIcon />Light
           </Box>
         </MenuItem>
-        <MenuItem value='system'>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <SettingsBrightnessOutlined />System
-          </Box>
-        </MenuItem>
         <MenuItem value='dark'>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
             <DarkModeOutlined />Dark
+          </Box>
+        </MenuItem>
+        <MenuItem value='system'>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <SettingsBrightnessOutlined />System
           </Box>
         </MenuItem>
       </Select>

@@ -44,3 +44,8 @@ export const createNewCardAPI = async (newCardData) => {
   const response = await axios.post(`${API_ROOT}/v1/cards`, newCardData)
   return response.data
 }
+
+export const fetchCardDetailsAPI = async (cardId) => {
+  const response = await axios.get(`${API_ROOT}/v1/cards/${cardId}`)
+  return response.data
+}
